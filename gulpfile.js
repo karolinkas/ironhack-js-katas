@@ -57,21 +57,15 @@ gulp.task('js:dependencies', function() {
 });
 
 gulp.task('js:application', function() {
-  var bundler = watchify(browserify('./app/javascripts/app.js', watchify.args));
-
-  function bundle () {
-    return bundler.bundle()
-      .pipe(source('bundle.js'))
-      .pipe(rename({basename: 'app'}))
-      .pipe(gulp.dest('public/javascripts'));
-  }
-
-  // Transforms
-  bundler.transform(jadeify);
-
-  // Watch
-  bundler.on('update', bundle);
-  return bundle();
+  gulp.src([
+      'app/javascripts/main.js'
+    ])
+    .pipe(plumber())
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('public/javascripts'))
+    .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('public/javascripts'))
 });
 
 gulp.task('home', function() {
