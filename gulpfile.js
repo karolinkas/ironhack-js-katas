@@ -1,9 +1,5 @@
-    //Browserify and plugins
-var browserify  = require('browserify'),
-    jadeify     = require('jadeify'),
-    watchify    = require('watchify'),
     //Gulp and plugins
-    gulp        = require('gulp'),
+var gulp        = require('gulp'),
     concat      = require('gulp-concat'),
     connect     = require('gulp-connect'),
     consolidate = require('gulp-consolidate'),
@@ -15,9 +11,9 @@ var browserify  = require('browserify'),
     uglify      = require('gulp-uglify'),
     watch       = require('gulp-watch'),
     //Vinylfs
-    source      = require('vinyl-source-stream'),
+    source      = require('vinyl-source-stream');
     //Information to display on the page
-    page        = require('./data');
+    // page        = require('./data');
 
 gulp.task('webserver', function() {
   connect.server({
