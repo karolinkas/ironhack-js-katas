@@ -76,7 +76,7 @@ gulp.task('js:application', function() {
 
 gulp.task('home', function() {
   gulp.src('app/index.jade')
-    .pipe(consolidate('jade', page.home()))
+    .pipe(consolidate('jade', {pretty:true}))
     .pipe(rename({extname: '.html'}))
     .pipe(gulp.dest('public'))
 });
