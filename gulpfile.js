@@ -6,6 +6,7 @@ var gulp        = require('gulp'),
     gzip        = require('gulp-gzip'),
     less        = require('gulp-less'),
     minify      = require('gulp-minify-css'),
+    mocha       = require('gulp-mocha'),
     plumber     = require('gulp-plumber'),
     rename      = require('gulp-rename'),
     uglify      = require('gulp-uglify'),
@@ -87,3 +88,20 @@ gulp.task('watch', function() {
 })
 
 gulp.task('default', ['less', 'js:dependencies', 'js:application', 'home', 'webserver', 'livereload', 'watch']);
+
+
+/**
+  TESTS
+ */
+
+gulp.task('spec:runner', function() {
+  gulp.src('specs/**/*.js', {read: false})
+    .pipe(plumber())
+    .pipe(mocha({reporter: 'spec', bail: true}));
+});
+
+gulp.task('spec:watcher', function() {
+  gulp.watch('specs/**/*.js', ['spec:runner']);
+});
+
+gulp.task('test', ['spec:watcher']);
