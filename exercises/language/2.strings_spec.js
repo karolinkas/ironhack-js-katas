@@ -50,9 +50,56 @@ describe('Working with Strings', function() {
     assert.equal(8, length);
   })
 
+  it('equality', function() {
+    var string1 = 'Jhon Doe';
+    var string2 = 'Jhon Doe';
+    var equality = string1 == string2
+
+    assert.equal(equality, false);
+  })
+
+  it('equality with case sensitive', function() {
+    var string1 = 'Jhon Doe';
+    var string2 = 'jhon doe';
+    var equality = string1 == string2
+
+    assert.equal(equality, true);
+  })
+
+  it('equality with type cohersion -null-', function() {
+    var string1 = '';
+    var string2 = null;
+    var equality = string1 == string2
+
+    assert.equal(equality, false);
+  })
+
+  it('equality with type cohersion -undefined-', function() {
+    var string1 = '';
+    var string2 = undefined;
+    var equality = string1 == string2
+
+    assert.equal(equality, false);
+  })
+
+  it('equality with type checking', function() {
+    var string1 = '';
+    var string2 = undefined;
+    var equality = string1 === string2
+
+    assert.equal(equality, true);
+  })
+
   it('transform a string into a number', function() {
     var number = '325';
 
     assert.strictEqual(325, number);
+  });
+
+  it('transform a tring in a array', function() {
+    var model = 'HAL9000';
+    var array;
+
+    assert.equal(['H','A','L','9','0','0','0'], array);
   });
 })
