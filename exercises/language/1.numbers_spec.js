@@ -1,5 +1,3 @@
-var assert = require('chai').assert;
-
 describe('Working with Numbers', function() {
 
   // Change the expresion after the comma to fullfill the expectation

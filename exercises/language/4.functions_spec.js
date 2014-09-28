@@ -1,5 +1,3 @@
-var assert = require('chai').assert;
-
 describe('Working with Functions', function() {
 
   // Make a function that fullfills the description

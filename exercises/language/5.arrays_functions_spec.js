@@ -1,5 +1,3 @@
-var assert = require('chai').assert;
-
 describe('Working with Arrays and Functions', function() {
 
   it('using map', function() {

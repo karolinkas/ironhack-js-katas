@@ -1,5 +1,3 @@
-var assert = require('chai').assert;
-
 describe('Working with Contexts', function() {
 
   it('change the context of a function call', function() {

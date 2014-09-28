@@ -1,5 +1,3 @@
-var assert = require('chai').assert;
-
 describe('Working with Objects', function() {
 
   it('creating an object', function() {
