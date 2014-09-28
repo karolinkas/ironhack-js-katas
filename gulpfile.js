@@ -21,7 +21,7 @@ gulp.task('exercises:language:builder', function() {
 gulp.task('exercises:language:runner', function () {
   gulp.src('exercises/test_runner/index.html')
     .pipe(plumber())
-    .pipe(runner({mocha:{bail:true}}));
+    .pipe(runner());
 });
 
 gulp.task('exercises:language', ['exercises:language:watcher']);
