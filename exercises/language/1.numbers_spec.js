@@ -1,4 +1,4 @@
-var assert = require("assert");
+var assert = require('chai').assert;
 
 describe('Working with Numbers', function() {
 
