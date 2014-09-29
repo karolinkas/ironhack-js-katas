@@ -2,6 +2,7 @@
 var gulp        = require('gulp'),
     concat      = require('gulp-concat'),
     plumber     = require('gulp-plumber'),
+    rename      = require('gulp-rename'),
     template    = require('gulp-template-compile'),
     watch       = require('gulp-watch'),
     runner      = require('gulp-mocha-phantomjs');
@@ -21,7 +22,10 @@ gulp.task('exercises:language:watcher', function() {
 
 
 gulp.task('exercises:dom:builder', function() {
-  gulp.src(['exercises/dom/*.js'])
+  gulp.src([
+      'exercises/dom/helpers/*.js',
+      'exercises/dom/*.js'
+    ])
     .pipe(plumber())
     .pipe(concat('tests.js'))
     .pipe(gulp.dest('exercises/test_runner'))
@@ -30,6 +34,7 @@ gulp.task('exercises:dom:builder', function() {
 gulp.task('exercises:template:builder', function() {
   gulp.src(['exercises/dom/templates/**/*.html'])
     .pipe(plumber())
+    .pipe(rename({extname:''}))
     .pipe(template())
     .pipe(concat('templates.js'))
     .pipe(gulp.dest('exercises/test_runner'))
