@@ -93,11 +93,12 @@ describe('Working with Strings', function() {
   // assert.equal(<expression>, <expressionExpectation>);
 
   it('create a string without using variable declaration', function() {
-    assert.equal('Jhon Doe', '');
+    
+    assert.equal('Jhon Doe', 'Jhon Doe');
   });
 
   it('create a string using a variable declaration', function() {
-    var name;
+    var name = 'Jhon Doe';
 
     assert.equal('Jhon Doe', name);
   });
@@ -105,7 +106,7 @@ describe('Working with Strings', function() {
   it('concatenate two strings using plus operator', function() {
     var name    = 'HAL';
     var version = '9000';
-    var model;
+    var model = name + version ;
 
     assert.equal('HAL9000', model);
   });
@@ -113,7 +114,7 @@ describe('Working with Strings', function() {
   it('concatenate two strings using plus operator', function() {
     var firstName = 'Jhon';
     var lastName  = 'Doe';
-    var fullName;
+    var fullName = firstName + " " + lastName;
 
     assert.equal('Jhon Doe', fullName);
   });
@@ -122,14 +123,14 @@ describe('Working with Strings', function() {
     var numberOfWeekDays = 7;
     var weekIntro        = 'A week have';
     var weekOutro        = 'days';
-    var sentence;
+    var sentence = weekIntro + " " + numberOfWeekDays + " " + weekOutro;
 
     assert.equal('A week have 7 days', sentence);
   })
 
   it('calculate the number of characters of a string', function() {
     var name   = 'Jhon Doe';
-    var length;
+    var length = name.length;
 
     assert.equal(8, length);
   })
@@ -139,7 +140,7 @@ describe('Working with Strings', function() {
     var string2 = 'Jhon Doe';
     var equality = string1 == string2
 
-    assert.equal(equality, false);
+    assert.equal(equality, true);
   })
 
   it('equality with case sensitive', function() {
@@ -147,7 +148,7 @@ describe('Working with Strings', function() {
     var string2 = 'jhon doe';
     var equality = string1 == string2
 
-    assert.equal(equality, true);
+    assert.equal(equality, false);
   })
 
   it('equality with type cohersion -null-', function() {
@@ -169,22 +170,22 @@ describe('Working with Strings', function() {
   it('equality with type checking', function() {
     var string1 = '';
     var string2 = undefined;
-    var equality = string1 === string2
+    var equality = string1 === string2;
 
-    assert.equal(equality, true);
+    assert.equal(equality, false);
   })
 
   it('transform a string into a number', function() {
     var number = '325';
-
-    assert.strictEqual(325, number);
+    var number2 =parseInt(number);
+    assert.strictEqual(325, number2);
   });
 
   it('transform a tring in a array', function() {
     var model = 'HAL9000';
-    var array;
+    var array = model.split("");
 
-    assert.equal(['H','A','L','9','0','0','0'], array);
+    assert.deepEqual(['H','A','L','9','0','0','0'], array);
   });
 })
 
@@ -197,16 +198,16 @@ describe('Working with Arrays', function() {
   // assert.equal(<expression>, <expressionExpectation>);
 
   it('create an array without the new operator', function() {
-    var array;
+    var array = [];
 
     assert.isArray(array);
   })
 
   it('calculates the numbers of item in an array', function() {
     var fruits = ['orange', 'apple', 'banana', 'pineapple'];
-    var length;
+    var length = fruits.length;
 
-    assert.equal(4, length);
+    assert.deepEqual(4, length);
   })
 
   it('adds an element to the begining of the array', function() {
