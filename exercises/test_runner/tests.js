@@ -31,7 +31,6 @@ describe('Working with Numbers', function() {
     var number2  = 5;
     var equality = number1 == number2;
 
-
     assert.equal(equality, true);
   })
 
@@ -72,18 +71,17 @@ describe('Working with Numbers', function() {
     // <numberOfWeeks>
     var numberOfWeeks      = 5;
     var numberOfDaysInWeek = 7;
-    var totalNumberOfDays=numberOfWeeks*numberOfDaysInWeek;
+    var totalNumberOfDays = numberOfWeeks * numberOfDaysInWeek
 
     assert.equal(35, totalNumberOfDays);
   })
 
   it('transforming a number to string', function() {
    // Note: don't use parseInt
-   var numb1 = '5';
-   var numb = numb1.toString();
-   assert.strictEqual('5', numb);
- }) 
-
+    var numb1 = '5';
+    var numb = numb1.toString();
+    assert.strictEqual('5', numb);
+  })
 })
 
 describe('Working with Strings', function() {
