@@ -15,7 +15,7 @@ describe('Working with Numbers', function() {
   })
 
   it('multiplaction', function() {
-    assert.equal(3 * 2, 0);
+    assert.equal(3 * 2, 6);
   })
 
   it('division', function() {
