@@ -11,7 +11,7 @@ describe('Working with Numbers', function() {
   })
 
   it('difference', function() {
-    assert.equal(4 - 2, 0);
+    assert.equal(4 - 2, 2);
   })
 
   it('multiplaction', function() {
