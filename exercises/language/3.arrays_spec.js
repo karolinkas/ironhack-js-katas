@@ -7,16 +7,16 @@ describe('Working with Arrays', function() {
   // assert.equal(<expression>, <expressionExpectation>);
 
   it('create an array without the new operator', function() {
-    var array;
+    var array = [];
 
     assert.isArray(array);
   })
 
   it('calculates the numbers of item in an array', function() {
     var fruits = ['orange', 'apple', 'banana', 'pineapple'];
-    var length;
+    var length = fruits.length;
 
-    assert.equal(4, length);
+    assert.deepEqual(4, length);
   })
 
   it('adds an element to the begining of the array', function() {
