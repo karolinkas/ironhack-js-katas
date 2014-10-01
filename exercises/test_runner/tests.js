@@ -23,7 +23,7 @@ describe('Working with Numbers', function() {
   })
 
   it('modulus', function() {
-    assert.equal(10 % 3, 1 );
+    assert.equal(10 % 3, 1);   
   })
 
   it('equality', function() {
@@ -77,12 +77,11 @@ describe('Working with Numbers', function() {
   })
 
   it('transforming a number to string', function() {
-    // Note: don't use parseInt
+   // Note: don't use parseInt
     var numb1 = '5';
     var numb = numb1.toString();
     assert.strictEqual('5', numb);
   })
-
 })
 
 describe('Working with Strings', function() {
