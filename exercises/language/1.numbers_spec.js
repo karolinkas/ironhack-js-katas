@@ -7,11 +7,11 @@ describe('Working with Numbers', function() {
   // assert.equal(<expression>, <expressionExpectation>);
 
   it('sum', function() {
-    assert.equal(3 + 4, 0);
+    assert.equal(3 + 4, 7);
   })
 
   it('difference', function() {
-    assert.equal(4 - 2, 0);
+    assert.equal(4 - 2, 2);
   })
 
   it('multiplaction', function() {
