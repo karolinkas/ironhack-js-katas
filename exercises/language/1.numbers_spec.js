@@ -19,11 +19,11 @@ describe('Working with Numbers', function() {
   })
 
   it('division', function() {
-    assert.equal(6 / 2, 0);
+    assert.equal(6 / 2, 3);
   })
 
   it('modulus', function() {
-    assert.equal(10 % 3, 0);
+    assert.equal(10 % 3, 1 );
   })
 
   it('equality', function() {
@@ -31,7 +31,7 @@ describe('Working with Numbers', function() {
     var number2  = 5;
     var equality = number1 == number2;
 
-    assert.equal(equality, false);
+    assert.equal(equality, true);
   })
 
   it('equality with type cohersion', function() {
